@@ -1,0 +1,3 @@
+version=3
+ https://github.com/hashicorp/go-msgpack/releases \
+ .*/v?(\d[\d\.]*)\.tar\.gz

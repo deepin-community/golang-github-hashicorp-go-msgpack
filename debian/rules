@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+%:
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_test:
+	# msgpack_test.py fails with “msgpackrpc.error.TransportError: Retry
+	# connection over the limit”. Since issues are disabled on
+	# https://github.com/hashicorp/go-msgpack, Alexandre Viau directly
+	# emailed https://github.com/ryanuber who is the main committer.
+	# Once the issue is fixed upstream, the tests should be re-enabled.
